@@ -14,7 +14,12 @@ export default function Home() {
 }
 function Counter() {
   const count = useSelector((state) => state.counter.value);
+  const pokemonValue = useSelector((state) => state.pokemon.value);
   const dispatch = useDispatch();
+
+  function handleClick() {
+    console.log(pokemonValue);
+  }
 
   return (
     <div>
@@ -36,6 +41,10 @@ function Counter() {
         </button>
       </div>
       <TestCounter />
+      <button className="m-5" onClick={handleClick}>
+        {" "}
+        What is in pokemon data?
+      </button>
     </div>
   );
 }
