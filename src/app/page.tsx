@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { decrement, increment } from "./../redux/features/counter/counterSlice";
+import TestCounter from "./components/TestCounter";
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ function Counter() {
           Decrement
         </button>
       </div>
+      <TestCounter />
     </div>
   );
 }
