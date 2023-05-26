@@ -1,11 +1,26 @@
 import { useSelector } from "react-redux";
 
 export default function TestPokemon() {
-  const pokemon = useSelector((state) => state.pokemon.pokemonData);
+  const pokemon = useSelector((state) => state.pokemon);
+
+  function renderAbilities() {
+    return pokemon.pokemonData.abilities.map((x, index) => {
+      return <h3 key={index}>{x.ability.name}</h3>;
+    });
+  }
+
   return (
     <div>
       <h2>This is the pokemon data</h2>
-      <h3>{pokemon.abilities[0].ability.name}</h3>
+      {pokemon.pokemonData ? (
+        <h3>
+          got the data
+          {renderAbilities()}
+          {/* {pokemon.pokemonData.abilities[1].ability.name} */}
+        </h3>
+      ) : (
+        <h2>Currently Loading</h2>
+      )}
     </div>
   );
 }
