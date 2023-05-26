@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { decrement, increment } from "./../redux/features/counter/counterSlice";
 import TestCounter from "./components/TestCounter";
@@ -14,7 +14,7 @@ export default function Home() {
 }
 function Counter() {
   const count = useSelector((state) => state.counter.value);
-  const pokemonValue = useSelector((state) => state.pokemon.value);
+  const pokemonValue = useSelector((state) => state.pokemon.pokemonData);
   const dispatch = useDispatch();
 
   function handleClick() {
