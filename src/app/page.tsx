@@ -19,6 +19,7 @@ function Counter() {
     <div>
       <div>
         <button
+          className="m-4"
           aria-label="Increment value"
           onClick={() => dispatch(increment())}
         >
@@ -26,6 +27,7 @@ function Counter() {
         </button>
         <span>{count}</span>
         <button
+          className="m-4"
           aria-label="Decrement value"
           onClick={() => dispatch(decrement())}
         >
