@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { decrement, increment } from "./../redux/features/counter/counterSlice";
 import { fetchInitialData } from "./../redux/features/pokemon/pokemonSlice";
 import TestCounter from "./components/TestCounter";
+import TestPokemon from "./components/TestPokemon";
 
 export default function Home() {
   return (
@@ -49,6 +50,7 @@ function Counter() {
         {" "}
         What is in pokemon data?
       </button>
+      <TestPokemon />
     </div>
   );
 }
